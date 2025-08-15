@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAYUSH ADK- Begineer Software Developer</title>
+    <title>AAYUSH ADK - Beginner Software Developer</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -325,47 +325,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Blog Section */
-        .blog-section {
-            padding: 100px 0;
-            background: var(--secondary-bg);
-        }
-
-        .blog-card {
-            background: var(--primary-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-content {
-            padding: 2rem;
-        }
-
-        .blog-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .blog-meta {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
         /* Contact Section */
         .contact-section {
             padding: 100px 0;
@@ -452,8 +411,6 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">SKILLS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">EDUCATION</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
-            
                 </ul>
             </div>
         </div>
@@ -465,7 +422,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="hero-content">
-                        <h1>Hello,<br>This Is AAYUSH ADK. I'm a<br>Begineer Software<br>Developer.</h1>
+                        <h1>Hello,<br>This Is AAYUSH ADK. I'm a<br>Beginner Software<br>Developer.</h1>
                         <p class="subtitle">Crafting digital experiences with passion and precision</p>
                         <a href="#contact" class="btn-primary-custom">CONTACT ME</a>
                         
@@ -516,7 +473,7 @@
                 </div>
                 
                 <div class="col-lg-4 text-center">
-                    <img src="aayushlogo.png" alt="Professional headshot of Abu Said, a software developer with short dark hair wearing a collared shirt, smiling at the camera against a neutral background" class="profile-img">
+                    <img src="aayushlogo.png" alt="Profile Image" class="profile-img">
                 </div>
             </div>
         </div>
@@ -769,56 +726,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <h2 class="section-title">BLOG</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <img src="https://placehold.co/400x200" alt="Modern workspace setup showing a laptop displaying React code, surrounded by programming books, a coffee cup, and tech gadgets on a wooden desk" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">Getting Started with React Hooks</h5>
-                            <div class="blog-meta">
-                                <i class="fas fa-calendar-alt"></i> March 15, 2024
-                                <span class="ms-3"><i class="fas fa-clock"></i> 5 min read</span>
-                            </div>
-                            <p>A comprehensive guide to understanding and implementing React Hooks in your applications. Learn the fundamentals and best practices.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <img src="https://placehold.co/400x200" alt="Split screen showing Node.js server code on the left and API testing interface on the right, with JSON data and HTTP status codes visible" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">Building Scalable APIs with Node.js</h5>
-                            <div class="blog-meta">
-                                <i class="fas fa-calendar-alt"></i> March 10, 2024
-                                <span class="ms-3"><i class="fas fa-clock"></i> 8 min read</span>
-                            </div>
-                            <p>Learn how to build robust and scalable REST APIs using Node.js, Express, and MongoDB with proper error handling and security.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <img src="https://placehold.co/400x200" alt="AWS cloud architecture diagram showing various services like EC2, RDS, S3, and Lambda connected with arrows, displayed on a computer monitor" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">Cloud Deployment with AWS</h5>
-                            <div class="blog-meta">
-                                <i class="fas fa-calendar-alt"></i> March 5, 2024
-                                <span class="ms-3"><i class="fas fa-clock"></i> 12 min read</span>
-                            </div>
-                            <p>A step-by-step guide to deploying your applications on AWS using EC2, RDS, and other essential services for production environments.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -856,7 +763,7 @@
                                     </div>
                                     <div>
                                         <h6>LOCATION</h6>
-                                        <p>Jhapa,Nepal</p>
+                                        <p>Jhapa, Nepal</p>
                                     </div>
                                 </div>
                                 
@@ -938,108 +845,14 @@
         }, observerOptions);
 
         // Observe all sections and cards
-        document.querySelectorAll('section, .experience-card, .project-card, .education-card, .blog-card, .skill-item').forEach(el => {
+        document.querySelectorAll('section, .experience-card, .project-card, .education-card, .skill-item').forEach(el => {
             observer.observe(el);
-        });
-
-        // Typing effect for hero section
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
-        }
-
-        // Initialize typing effect when page loads
-        window.addEventListener('load', function() {
-            const codeElement = document.querySelector('.code-content');
-            if (codeElement) {
-                const originalContent = codeElement.innerHTML;
-                // Add a small delay before starting the typing effect
-                setTimeout(() => {
-                    // Keep the original content as is for now
-                }, 1000);
-            }
-        });
-
-        // Add hover effects to social links
-        document.querySelectorAll('.social-links a').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.1)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Add click effects to buttons
-        document.querySelectorAll('.btn-primary-custom').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.pointerEvents = 'none';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Add CSS for ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-            const heroCode = document.querySelector('.hero-code');
-            
-            if (heroContent && heroCode) {
-                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                heroCode.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
         });
 
         // Add loading animation
         window.addEventListener('load', function() {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease-in-out';
-            
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
@@ -1047,4 +860,3 @@
     </script>
 </body>
 </html>
-
