@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABU SAID - Professional Software Developer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0f172a;
+            --secondary-bg: #1e293b;
+            --accent-color: #8b5cf6;
+            --accent-hover: #a855f7;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
+            --border-color: #334155;
+            --gradient-start: #8b5cf6;
+            --gradient-end: #ec4899;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-primary) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-bg);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 1rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-code {
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot.red { background: #ef4444; }
+        .code-dot.yellow { background: #eab308; }
+        .code-dot.green { background: #22c55e; }
+
+        .code-content {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .code-keyword { color: #8b5cf6; }
+        .code-string { color: #10b981; }
+        .code-comment { color: var(--text-muted); }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-section {
+            padding: 100px 0;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 100px 0;
+            background: var(--secondary-bg);
+        }
+
+        .experience-card {
+            background: var(--primary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-duration {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 100px 0;
+            background: var(--secondary-bg);
+        }
+
+        .project-card {
+            background: var(--primary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-code {
+            background: #000;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 100px 0;
+        }
+
+        .education-card {
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 100px 0;
+            background: var(--secondary-bg);
+        }
+
+        .blog-card {
+            background: var(--primary-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+
+        .contact-card {
+            background: var(--secondary-bg);
+            border-radius: 15px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0e1a;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#home">ABU SAID</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">EXPERIENCE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">SKILLS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">EDUCATION</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Hello,<br>This Is ABU SAID. I'm a<br>Professional Software<br>Developer.</h1>
+                        <p class="subtitle">Crafting digital experiences with passion and precision</p>
+                        <a href="#contact" class="btn-primary-custom">CONTACT ME</a>
+                        
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-code">
+                        <div class="code-header">
+                            <div class="code-dot red"></div>
+                            <div class="code-dot yellow"></div>
+                            <div class="code-dot green"></div>
+                        </div>
+                        <div class="code-content">
+                            <div><span class="code-keyword">const</span> developer = {</div>
+                            <div>&nbsp;&nbsp;name: <span class="code-string">'Abu Said'</span>,</div>
+                            <div>&nbsp;&nbsp;skills: [<span class="code-string">'JavaScript'</span>, <span class="code-string">'Python'</span>, <span class="code-string">'React'</span>],</div>
+                            <div>&nbsp;&nbsp;passion: <span class="code-string">'Creating amazing software'</span>,</div>
+                            <div>&nbsp;&nbsp;hireable: <span class="code-keyword">true</span></div>
+                            <div>};</div>
+                            <br>
+                            <div><span class="code-comment">// Let's build something great together!</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p class="lead mb-4">I'm a passionate software developer with over 5 years of experience in building web applications and solving complex problems. I specialize in full-stack development with a focus on modern JavaScript frameworks and cloud technologies.</p>
+                    
+                    <p>My journey in software development started with a curiosity about how things work behind the scenes. Today, I help businesses and individuals bring their ideas to life through clean, efficient, and scalable code. I believe in writing code that not only works but is also maintainable and follows best practices.</p>
+                    
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and mentoring fellow developers.</p>
+                </div>
+                
+                <div class="col-lg-4 text-center">
+                    <img src="https://placehold.co/400x400" alt="Professional headshot of Abu Said, a software developer with short dark hair wearing a collared shirt, smiling at the camera against a neutral background" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">EXPERIENCE</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <h3 class="experience-title">SENIOR DEVELOPER</h3>
+                        <div class="experience-company">Full Stack Developer</div>
+                        <div class="experience-duration">Jan 2024 - Present</div>
+                        <p>Leading development of enterprise web applications using React, Node.js, and AWS. Mentoring junior developers and architecting scalable solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                        <h3 class="experience-title">FULL STACK DEVELOPER</h3>
+                        <div class="experience-company">Web Developer</div>
+                        <div class="experience-duration">Mar 2022 - Dec 2023</div>
+                        <p>Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to implement pixel-perfect interfaces.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                        </div>
+                        <h3 class="experience-title">FRONTEND DEVELOPER</h3>
+                        <div class="experience-company">Junior Developer</div>
+                        <div class="experience-duration">Jun 2020 - Feb 2022</div>
+                        <p>Specialized in creating responsive and interactive user interfaces. Worked extensively with React, Vue.js, and modern CSS frameworks.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <h3 class="experience-title">INTERN DEVELOPER</h3>
+                        <div class="experience-company">Trainee Developer</div>
+                        <div class="experience-duration">Jan 2020 - May 2020</div>
+                        <p>Started my professional journey as an intern, learning best practices and contributing to real-world projects under senior guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">SKILLS</h2>
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h5>JavaScript</h5>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h5>React</h5>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h5>Node.js</h5>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h5>Python</h5>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h5>AWS</h5>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <h5>Docker</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-code">
+                            <div><span class="code-keyword">const</span> aiChatBot = <span class="code-keyword">new</span> Project({</div>
+                            <div>&nbsp;&nbsp;name: <span class="code-string">'AI-Powered Chat Bot'</span>,</div>
+                            <div>&nbsp;&nbsp;tech: [<span class="code-string">'React'</span>, <span class="code-string">'Node.js'</span>, <span class="code-string">'OpenAI'</span>],</div>
+                            <div>&nbsp;&nbsp;features: [<span class="code-string">'NLP'</span>, <span class="code-string">'Real-time'</span>],</div>
+                            <div>&nbsp;&nbsp;status: <span class="code-string">'Production'</span></div>
+                            <div>});</div>
+                        </div>
+                        <h4>AI-Powered Financial Bot</h4>
+                        <p>An intelligent chatbot that helps users with financial queries using natural language processing and machine learning algorithms.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-code">
+                            <div><span class="code-keyword">class</span> EcommerceApp <span class="code-keyword">extends</span> React.Component {</div>
+                            <div>&nbsp;&nbsp;<span class="code-keyword">constructor</span>() {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">super</span>();</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.state = {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cart: [],</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user: <span class="code-keyword">null</span></div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;};</div>
+                            <div>&nbsp;&nbsp;}</div>
+                            <div>}</div>
+                        </div>
+                        <h4>E-commerce Platform</h4>
+                        <p>A full-featured e-commerce platform with user authentication, payment processing, and inventory management.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-code">
+                            <div><span class="code-keyword">import</span> { useState, useEffect } <span class="code-keyword">from</span> <span class="code-string">'react'</span>;</div>
+                            <br>
+                            <div><span class="code-keyword">function</span> WeatherApp() {</div>
+                            <div>&nbsp;&nbsp;<span class="code-keyword">const</span> [weather, setWeather] = useState({});</div>
+                            <div>&nbsp;&nbsp;<span class="code-keyword">const</span> [location, setLocation] = useState(<span class="code-string">''</span>);</div>
+                            <br>
+                            <div>&nbsp;&nbsp;<span class="code-keyword">return</span> &lt;WeatherDashboard /&gt;;</div>
+                            <div>}</div>
+                        </div>
+                        <h4>Weather Dashboard</h4>
+                        <p>A responsive weather application with real-time data, forecasts, and location-based services.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-code">
+                            <div><span class="code-keyword">const</span> taskManager = {</div>
+                            <div>&nbsp;&nbsp;tasks: [],</div>
+                            <div>&nbsp;&nbsp;addTask(task) {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.tasks.push(task);</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;localStorage.setItem(<span class="code-string">'tasks'</span>, JSON.stringify(<span class="code-keyword">this</span>.tasks));</div>
+                            <div>&nbsp;&nbsp;},</div>
+                            <div>&nbsp;&nbsp;getTasks() {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-keyword">this</span>.tasks;</div>
+                            <div>&nbsp;&nbsp;}</div>
+                            <div>};</div>
+                        </div>
+                        <h4>Task Management System</h4>
+                        <p>A collaborative task management application with real-time updates, team collaboration, and progress tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate text-white"></i>
+                        </div>
+                        <h4>BACHELOR DEGREE</h4>
+                        <div class="text-muted mb-2">Computer Science</div>
+                        <p>Graduated with honors in Computer Science, focusing on software engineering, algorithms, and data structures.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-award text-white"></i>
+                        </div>
+                        <h4>HIGHER SECONDARY CERTIFICATE</h4>
+                        <div class="text-muted mb-2">Science Group</div>
+                        <p>Completed higher secondary education with excellent grades in Mathematics, Physics, and Computer Science.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-medal text-white"></i>
+                        </div>
+                        <h4>SECONDARY SCHOOL CERTIFICATE</h4>
+                        <div class="text-muted mb-2">Science Group</div>
+                        <p>Laid the foundation for my technical journey with strong performance in mathematics and science subjects.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-trophy text-white"></i>
+                        </div>
+                        <h4>PROFESSIONAL CERTIFICATIONS</h4>
+                        <div class="text-muted mb-2">Various Platforms</div>
+                        <p>AWS Solutions Architect, Google Cloud Professional, MongoDB Developer, and React Advanced Concepts certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">BLOG</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="https://placehold.co/400x200" alt="Modern workspace setup showing a laptop displaying React code, surrounded by programming books, a coffee cup, and tech gadgets on a wooden desk" class="blog-image">
+                        <div class="blog-content">
+                            <h5 class="blog-title">Getting Started with React Hooks</h5>
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar-alt"></i> March 15, 2024
+                                <span class="ms-3"><i class="fas fa-clock"></i> 5 min read</span>
+                            </div>
+                            <p>A comprehensive guide to understanding and implementing React Hooks in your applications. Learn the fundamentals and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="https://placehold.co/400x200" alt="Split screen showing Node.js server code on the left and API testing interface on the right, with JSON data and HTTP status codes visible" class="blog-image">
+                        <div class="blog-content">
+                            <h5 class="blog-title">Building Scalable APIs with Node.js</h5>
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar-alt"></i> March 10, 2024
+                                <span class="ms-3"><i class="fas fa-clock"></i> 8 min read</span>
+                            </div>
+                            <p>Learn how to build robust and scalable REST APIs using Node.js, Express, and MongoDB with proper error handling and security.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-card">
+                        <img src="https://placehold.co/400x200" alt="AWS cloud architecture diagram showing various services like EC2, RDS, S3, and Lambda connected with arrows, displayed on a computer monitor" class="blog-image">
+                        <div class="blog-content">
+                            <h5 class="blog-title">Cloud Deployment with AWS</h5>
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar-alt"></i> March 5, 2024
+                                <span class="ms-3"><i class="fas fa-clock"></i> 12 min read</span>
+                            </div>
+                            <p>A step-by-step guide to deploying your applications on AWS using EC2, RDS, and other essential services for production environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">CONTACT WITH ME</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h6>EMAIL</h6>
+                                        <p>abusaid@example.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h6>PHONE</h6>
+                                        <p>+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h6>LOCATION</h6>
+                                        <p>New York, USA</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <h6>WEBSITE</h6>
+                                        <p>www.abusaid.dev</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Abu Said. All rights reserved. | Built with passion and precision</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('section, .experience-card, .project-card, .education-card, .blog-card, .skill-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Typing effect for hero section
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const codeElement = document.querySelector('.code-content');
+            if (codeElement) {
+                const originalContent = codeElement.innerHTML;
+                // Add a small delay before starting the typing effect
+                setTimeout(() => {
+                    // Keep the original content as is for now
+                }, 1000);
+            }
+        });
+
+        // Add hover effects to social links
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click effects to buttons
+        document.querySelectorAll('.btn-primary-custom').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            const heroCode = document.querySelector('.hero-code');
+            
+            if (heroContent && heroCode) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroCode.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
