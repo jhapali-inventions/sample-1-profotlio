@@ -51,20 +51,44 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--text-primary) !important;
+            text-decoration: none;
+            margin-right: 2rem;
         }
 
-        .navbar-nav .nav-link {
+        .navbar-items {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar-items .nav-item {
+            margin-left: 1.5rem;
+        }
+
+        .navbar-items .nav-link {
             color: var(--text-secondary) !important;
             font-weight: 500;
-            margin: 0 0.5rem;
+            text-decoration: none;
             transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
         }
 
-        .navbar-nav .nav-link:hover {
+        .navbar-items .nav-link:hover {
             color: var(--accent-color) !important;
         }
 
@@ -75,6 +99,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero-content h1 {
@@ -392,28 +417,38 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .navbar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .navbar-items {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+            }
+            
+            .navbar-items .nav-item {
+                margin-left: 0;
+                margin-right: 1rem;
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
-        <div class="container">
+    <nav class="navbar-custom fixed-top">
+        <div class="navbar-container">
             <a class="navbar-brand" href="#home">AAYUSH ADK</a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">EXPERIENCE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">SKILLS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">EDUCATION</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
-                </ul>
-            </div>
+            <ul class="navbar-items">
+                <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">EXPERIENCE</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">SKILLS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">EDUCATION</a></li>
+            </ul>
         </div>
     </nav>
 
